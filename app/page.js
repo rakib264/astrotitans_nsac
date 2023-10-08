@@ -1,113 +1,126 @@
-import Image from 'next/image'
+"use client";
+import BackgroundImage from "@/components/AppSpace/BgImage/BgImage";
+import Health from "@/components/AppSpace/Booking/Health/Health";
+import MainModalComponent from "@/components/AppSpace/Booking/Modal/Modal";
+import BoardingPass from "@/components/AppSpace/Booking/Pass/BroadingPass";
+import SeatPlane from "@/components/AppSpace/Booking/SeatPlane/SeatPlane";
+import Vehicle from "@/components/AppSpace/Booking/Vehicle/Vehicle";
+import EarthGlobe from "@/components/AppSpace/EarthGlobe";
+import FlightPathMap from "@/components/AppSpace/Map/NavigationRoute/Navigation";
+import MissionCategory from "@/components/AppSpace/Missions/Category/MissionCategory";
+import MainLayout from "@/components/AppSpace/Root/Layout/MainLayout";
+import SolarSystem from "@/components/AppSpace/Solar/SolarSystem";
+import App from "@/components/components/App/App";
+import ItemsMobile from "@/components/components/Navbar/NavMobile/ItemControler";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <MainLayout>
+      <div className="w-full h-full">
+        <div className="w-full h-full">
+          <BackgroundImage imageUrl="/assets/images/cosmos.png">
+            <div className="pt-[10px] md:pt-[150px] text-center text-white p-4">
+              <h1 className="text-5xl md:text-8xl font-bold pb-6">
+                Welcome to{" "}
+                <span className="text-6xl md:text-9xl text-orange-500 font-semibold">
+                  AstroTitans
+                </span>
+              </h1>
+              <p className="text-2xl md:text-4xl text-gray-300">
+                Elevating a billion dreams to the cosmos.
+              </p>
+            </div>
+          </BackgroundImage>
         </div>
+
+        <div className="w-full h-auto px-24 py-16 bg-blue-950 opacity-70">
+          <div className="grid grid-cols-2 gap-8">
+            <div className="col-span-2 md:col-span-1 w-full h-auto px-4 py-3">
+              <img
+                src="/assets/images/clara.png"
+                className="w-full h-auto rounded-md"
+                alt="clara"
+              />
+            </div>
+            <div className="col-span-2 md:col-span-1 w-full h-auto px-4 py-3">
+              <h2 className="text-6xl text-orange-600 font-bold py-4">
+                Journey to Mars: Exploring the Red Planet in 2040
+              </h2>
+              <div className="pt-6">
+                <p className="text-[26px] text-white font-semibold pt-4 pb-3">
+                  In the near-future world of 2040, Clara Klein stands at the
+                  forefront of an awe-inspiring odyssey – the exploration and
+                  prospective colonization of Mars. Clara, an ardent space
+                  tourism enthusiast and a fervent admirer of our solar system,
+                  aspires to witness humankind's first steps on Mars, a planet
+                  she believes holds the key to our species' future.
+                </p>
+                <p className="text-[26px] text-white font-semibold pt-4 pb-3">
+                  One of Clara's primary objectives is to evaluate Mars'
+                  suitability for human habitation. She understands that Mars
+                  offers numerous advantages, including the potential to support
+                  life with the right technology and resources. Clara envisions
+                  the establishment of research bases and sustainable habitats,
+                  paving the way for future colonization.
+                </p>
+                <p className="text-[26px] text-white font-semibold py-3">
+                  As Clara prepares for her historic journey to Mars in 2040,
+                  she serves as an inspiration to us all. Her unwavering
+                  determination, passion for space exploration, and steadfast
+                  belief in the possibilities of interplanetary travel remind us
+                  that the cosmos holds boundless opportunities. Clara Klein's
+                  journey encapsulates the human spirit's pursuit of knowledge,
+                  adventure, and the quest for a brighter future.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-auto">
+          <div className="w-full pt-16 text-center text-5xl text-gray-900 dark:text-white">
+            Explore your space travel with us
+          </div>
+          <MissionCategory />
+        </div>
+
+        {/* <App /> */}
       </div>
+    </MainLayout>
+  );
+}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+{
+  /* <div className="py-16">
+        <SolarSystem />
+      </div> */
+}
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+{
+  /* <h2 className="text-3xl text-center text-white font-semibold pb-8">
+    //     Earth Can be destroyed by astroids?
+    //   </h2>
+    //   <div className="flex flex-col gap-3">
+    //     <div className="flex items-center gap-2">
+    //       <div className="w-10 h-10 bg-red-500 rounded-full"></div>
+    //       <p className="text-xl text-center text-white font-semibold">
+    //         Large & Dangerous Astroids
+    //       </p>
+    //     </div>
+    //     <div className="flex items-center gap-2">
+    //       <div className="w-6 h-6 bg-green-500 rounded-full"></div>
+    //       <p className="text-xl text-center text-white font-semibold">
+    //         Small & Less Dangerous Astroids
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div className="w-full h-auto my-8">
+    //     <EarthGlobe />
+    //   </div>
+    //   <div className="py-16">
+    //     <Link href="/mars">
+    //       <button className="btn btn-primary btn-lg">Explore Mars</button>
+    //     </Link>
+    //   </div> */
 }
